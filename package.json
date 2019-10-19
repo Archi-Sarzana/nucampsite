@@ -4,8 +4,8 @@
   "description": "This is a website for the fictional campsites review site Nucamp",
   "main": "index.html",
   "scripts": {
-    "lite": "lite-server",
     "start": "npm run lite",
+    "lite": "lite-server",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Sarzana Maldonado",
@@ -15,6 +15,8 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "bootstrap-social": "^5.1.1",
+    "font-awesome": "^4.7.0",
     "jquery": "^3.4.1",
     "popper.js": "^1.12.9"
   }
