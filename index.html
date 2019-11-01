@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags always come first -->
+    <!-- Viewport -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS Link -->
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
 
     <!-- Additional CSS must be placed after Bootstrap CSS -->
@@ -19,7 +19,7 @@
 </head>
 
 <body>
-
+        <!---Jumbotron Reserve Campsite on top right of page-->
     <header class="jumbotron jumbotron-fluid">
         <div class="container">
             <div class="row">
@@ -37,6 +37,7 @@
         </div>
     </header>
 
+        <!--Navbar setup-->
     <nav class="navbar navbar-expand-sm navbar-dark sticky-top">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="img/logo.png" height="30" width="30" /></a>
@@ -59,6 +60,7 @@
         </div>
     </nav>
 
+     <!---Jumbotron Reserve Campsite on top right of page with Modal-->
     <div id="reserveModal" class="modal fade" role="dialog">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -114,7 +116,7 @@
             </div>
         </div>
     </div>
-
+        <!--Login Modal-->
     <div id="loginModal" class="modal fade" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -152,7 +154,8 @@
             </div>
         </div>
     </div>
-
+    
+        <!--Carousel-->
     <div class="container">
 
         <div class="row row-content">
@@ -194,6 +197,9 @@
                         <span class="carousel-control-next-icon"></span>
                         <span class="sr-only">Next</span>
                     </a>
+                    <button class="btn btn-danger btn-sm" id="carouselButton">
+                        <i class="fa fa-pause"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -214,8 +220,8 @@
         </div>
 
         <div class="row row-content align-items-center">
-            <div class="col-sm-4 col-md-3">
-                <h2 class="text-sm-right">Featured Campsites</h2>
+            <div class="col-sm-4 order-sm-first col-md-3">
+                <h2 class="text-sm-left">Featured Campsites</h2>
             </div>
             <div class="col">
                 <div class="media">
@@ -223,7 +229,7 @@
                         <h3>React Lake Campground</h3>
                         <p class="d-none d-sm-block">Nestled in the foothills of the Chrome Mountains, this campground on the shores of the pristine React Lake is a favorite for fly fishers.</p>
                     </div>
-                    <img class="d-flex ml-3 img-thumbnail" src="img/react-lake-thumb.jpg" alt="React Lake Campground">
+                    <img class="d-flex mr-3 img-thumbnail" src="img/react-lake-thumb.jpg" alt="React Lake Campground">
                 </div>
             </div>
         </div>
@@ -243,6 +249,7 @@
             </div>
         </div>
     </div>
+   
 
     <footer class="site-footer">
         <div class="container">
@@ -275,6 +282,23 @@
     <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
     <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $(".carousel").carousel( { interval: 2000 } );
+            $("#carouselButton").click(function(){
+                if ($("#carouselButton").children("i").hasClass("fa-pause")) {
+                    $(".carousel").carousel("pause");
+                    $("#carouselButton").children("i").removeClass("fa-pause");
+                    $("#carouselButton").children("i").addClass("fa-play");
+                } else {
+                    $(".carousel").carousel("cycle");
+                    $("#carouselButton").children("i").removeClass("fa-play");
+                    $("#carouselButton").children("i").addClass("fa-pause"); 
+                }
+            });
+        });
+    </script>
 
 </body>
 
